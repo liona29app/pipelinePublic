@@ -58,13 +58,17 @@ pipeline {
       }
     }
       stage('Checkpoint') {
-         agent none
+         agent {
+    label 'jenkins-slave'
+  }
          steps {
             checkpoint 'Checkpoint'
          }
       }
       stage('Deploy') {
-         agent none
+         agent {
+    label 'jenkins-slave'
+  }
          steps {
             echo 'Deploying....'
          }
