@@ -3,7 +3,10 @@ pipeline {
     node {
       label 'jenkins-slave'
     }
-
+  parameters {
+    string(name: 'Name', defaultValue: 'whoever you are', 
+      description: 'Who should I say hi to?')
+   }
   }
   stages {
     stage('print') {
@@ -16,8 +19,8 @@ pipeline {
     }
 
   }
-  environment {
-    Name = 'Ari'
-    TEST_USER = credentials('test-user')
-  }
+//   environment {
+//     Name = 'Ari'
+//     TEST_USER = credentials('test-user')
+//   }
 }
