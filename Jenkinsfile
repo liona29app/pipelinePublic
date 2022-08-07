@@ -5,7 +5,6 @@ pipeline {
   environment {
     Name = 'Ari'
   }
-  }
   stages {
     stage('print') {
       steps {
