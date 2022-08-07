@@ -1,18 +1,22 @@
 pipeline {
   agent {
-      label 'jenkins-slave'
-    }
-  parameters {
-    string(name: 'Name', defaultValue: 'whoever you are', 
-      description: 'Who should I say hi to?')
-   }
+    label 'jenkins-slave'
+  }
   stages {
-    stage('print') {
+    stage('Say Hello') {
       steps {
-        echo "hello ${Name}"
-        sh 'java --version'
+        echo "Hello ${params.Name}!"
+        sh 'java -version'
+        echo "${TEST_USER_USR}"
+        echo "${TEST_USER_PSW}"
       }
     }
-
+  }
+  environment {
+    MY_NAME = 'ari'
+    TEST_USER = credentials('test-user')
+  }
+  parameters {
+    string(name: 'Name', defaultValue: 'whoever you are', description: 'Who should I say hi to?')
   }
 }
