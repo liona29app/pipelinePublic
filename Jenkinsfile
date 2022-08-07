@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('print') {
       steps {
-        echo 'hello ${Name}'
+        echo 'hello \'"${Name}"'
         sh 'java --version'
       }
     }
