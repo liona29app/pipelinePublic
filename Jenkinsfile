@@ -9,6 +9,7 @@ pipeline {
     stage('print') {
       steps {
         echo 'hello ari'
+        sh 'java --version'
       }
     }
 
