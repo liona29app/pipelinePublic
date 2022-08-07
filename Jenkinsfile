@@ -47,7 +47,7 @@ pipeline {
 
         stage('Java 9') {
           agent {
-            label 'master'
+            label 'jenkins-jenkins-agent'
           }
           steps {
             sh 'java -version'
