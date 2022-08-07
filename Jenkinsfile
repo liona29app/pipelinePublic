@@ -8,10 +8,13 @@ pipeline {
   stages {
     stage('print') {
       steps {
-        echo 'hello ari'
+        echo 'hello ${Name}'
         sh 'java --version'
       }
     }
 
+  }
+  environment {
+    Name = 'Ari'
   }
 }
