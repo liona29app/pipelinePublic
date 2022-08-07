@@ -1,9 +1,9 @@
 pipeline {
   agent {
+    node {
       label 'jenkins-slave'
     }
-  environment {
-    Name = 'Ari'
+
   }
   stages {
     stage('print') {
@@ -13,5 +13,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    Name = 'Ari'
   }
 }
